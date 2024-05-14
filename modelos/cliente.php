@@ -10,11 +10,11 @@ class  Cliente extends Conexion {
 
     public function __construct($args = [])
     {
-        $this->cli_codigo = $args['cli_id'] ?? null;
-        $this->cli_nombre = $args['cli_nombre'] ?? '';
-        $this->cli_apellido = $args['cli_apellido'] ?? '';
+        $this->cli_codigo = $args['cli_id'] ?? null ;
+        $this->cli_nombre = $args['cli_nombre'] ?? '' ;
+        $this->cli_apellido = $args['cli_apellido'] ?? '' ;
         $this->cli_nit = $args ['cli_nit'] ?? 00;
-        $this->cli_situacion = $args['cli_situacion'] ?? 1;
+        $this->cli_situacion = $args['cli_situacion'] ?? 1 ;
     }
     // insertar datos a la BD
     public function guardar(){
@@ -25,7 +25,7 @@ class  Cliente extends Conexion {
 
     public function buscar(...$columnas){
         $cols = count($columnas) > 0 ? implode(',', $columnas) : '*';
-        $sql = "SELECT $cols FROM cliente where cli_situacion = 1 ";
+        $sql = "SELECT $cols FROM cliente where cli_codigo > 0 ";
 
         if($this->cli_nombre != ''){
             $sql .= " AND cli_nombre like '%$this->cli_nombre%' ";
