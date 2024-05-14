@@ -11,7 +11,7 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="bi bi-boxes me-2"></i>Clientes
+          <i class="bi bi-person-bounding-box me-2"></i>Clientes
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/crud_2024/vistas/producto/index.php"><i class="bi bi-plus-circle me-2"></i>Crear</a></li>

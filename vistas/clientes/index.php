@@ -26,6 +26,11 @@
                 <button type="submit" class="btn btn-info w-100">Guardar</button>
             </div>
         </div>
+        <div class="row">
+            <div class="col">
+                <a href="../../controladores//clientes/buscar.php" class="btn btn-success w-100">Buscar</a>
+            </div>
+        </div>
     </form>
 </div>
 
