@@ -16,7 +16,6 @@ abstract class Conexion
             echo "No hay conexion ala Base de Datoss <br>";
             echo $e->getMessage();
             self::$conexion = null;
-            return null;
             exit;
         }
         return self::$conexion;
