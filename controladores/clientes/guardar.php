@@ -41,3 +41,20 @@ if ($_POST['cli_nombre'] == '' || $_POST['cli_apellido'] == '' || $_POST['cli_ni
     }
 
 }
+$alertas = ['danger', 'success', 'warning'];
+  
+include_once '../../vistas/templates/header.php'; ?>
+
+<div class="row justify-content-center">
+    <div class="col-lg-6 alert alert-<?=$alertas[$resultado['codigo']] ?>" role="alert">
+        <?= $resultado['mensaje'] ?>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-lg-6">
+        <a href="../../vistas/clientes/index.php" class="btn btn-primary w-100">Volver al formulario</a>
+    </div>
+</div>
+
+
+<?php include_once '../../vistas/templates/footer.php'; ?>  
