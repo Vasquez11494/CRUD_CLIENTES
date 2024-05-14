@@ -6,10 +6,12 @@
 require '../../modelos/cliente.php';
 
 $nit = $_POST['cli_nit'];
+$telefono = $_POST['cli_telefono'];
 // VALIDAR INFORMACION
 $_POST['cli_nombre'] = htmlspecialchars($_POST['cli_nombre']);
 $_POST['cli_apellido'] = htmlspecialchars($_POST['cli_apellido']);
 $_POST['cli_nit'] = filter_var($nit, FILTER_VALIDATE_INT);
+$_POST['cli_telefono'] = filter_var($telefono, FILTER_VALIDATE_INT);
 
 if ($_POST['cli_nombre'] == '' || $_POST['cli_apellido'] == '' || $_POST['cli_nit'] < 0) {
     // ALERTA PARA VALIDAR DATOS

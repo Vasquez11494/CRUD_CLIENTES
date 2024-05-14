@@ -11,6 +11,7 @@ try {
     $_GET['cli_nombre'] = htmlspecialchars($_GET['cli_nombre']);
     $_GET['cli_apellido'] = htmlspecialchars($_GET['cli_apellido']);
     $_GET['cli_nit'] = filter_var($_GET['cli_nit'], FILTER_VALIDATE_INT);
+    $_GET['cli_telefono'] = filter_var($_GET['cli_telefono'], FILTER_VALIDATE_INT);
 
     $Cli_Consulta = new Cliente($_GET);
     $cliente = $Cli_Consulta->buscar();
@@ -62,6 +63,7 @@ include_once '../../vistas/templates/header.php'; ?>
                                 <td><?= $clientes['cli_nombre'] ?></td>
                                 <td><?= $clientes['cli_apellido'] ?></td>
                                 <td><?= $clientes['cli_nit'] ?></td>
+                                <td><?= $clientes['cli_telefono'] ?></td>
                                 <td class="text-center">
                                 <div class="dropdown">
                                     <button class="btn btn-info dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
