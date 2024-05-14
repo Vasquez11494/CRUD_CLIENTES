@@ -2,7 +2,7 @@
 
 <h1 class="text-center">Formulario para Crear Clientes</h1>
 <div class="row justify-content-center">
-    <form action="/crud_2024/controladores/producto/guardar.php" method="POST" class="border bg-light shadow rounded p-4 col-lg-6">
+    <form action="../../controladores/clientes/guardar.php" method="POST" class="border bg-light shadow rounded p-4 col-lg-6">
         <div class="row mb-3">
             <div class="col">
                 <label for="cli_nombre">Nombre del Cliente</label>
