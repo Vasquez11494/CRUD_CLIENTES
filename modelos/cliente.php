@@ -16,4 +16,27 @@ class  Cliente extends Conexion {
         $this->cli_nit = $args ['cli_nit'] ?? 00;
         $this->cli_situacion = $args['cli_situacion'] ?? 1;
     }
+    // insertar datos a la BD
+    public function guardar(){
+        $sql = "INSERT into cliente (cli_nombre, cli_apellido, cli_nit) values ('$this->cli_nombre','$this->cli_apellido','$this->cli_nit')";
+        $resultado = $this->ejecutar($sql);
+        return $resultado; 
+    }
+
+    public function buscar(...$columnas){
+        $cols = count($columnas) > 0 ? implode(',', $columnas) : '*';
+        $sql = "SELECT $cols FROM cliente where cli_situacion = 1 ";
+
+        if($this->cli_nombre != ''){
+            $sql .= " AND cli_nombre like '%$this->cli_nombre%' ";
+        }
+        if($this->cli_apellido != ''){
+            $sql .= " AND cli_apellido like '%$this->cli_apellido%' ";
+        }
+        if($this->cli_nit != ''){
+            $sql .= " AND cli_nit = $this->cli_nit ";
+        }
+        $resultado = self::servir($sql);
+        return $resultado;
+    }
 }
