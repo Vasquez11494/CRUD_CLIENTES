@@ -53,6 +53,7 @@ include_once '../../vistas/templates/header.php'; ?>
                         <th>Nombre</th>
                         <th>Apellidos</th>
                         <th>NIT</th>
+                        <th>Telefono</th>
                     </tr>
                 </thead>
                 <tbody>
