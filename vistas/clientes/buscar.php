@@ -18,7 +18,7 @@
         <div class="row mb-3">
             <div class="col">
                 <label for="cli_nit">No. de NIT</label>
-                <input type="number" name="cli_nit" id="cli_nit" min="0" step="0.01" class="form-control">
+                <input type="number" name="cli_nit" id="cli_nit" class="form-control">
             </div>
         </div>
         <div class="row mb-3">

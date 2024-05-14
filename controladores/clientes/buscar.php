@@ -1,7 +1,7 @@
 <?php
-ini_set('display_errors', '1');
-ini_set('display_startup_errors', '1');
-error_reporting(E_ALL);
+// ini_set('display_errors', '1');
+// ini_set('display_startup_errors', '1');
+// error_reporting(E_ALL);
 
 
 require '../../modelos/cliente.php';
@@ -9,7 +9,7 @@ require '../../modelos/cliente.php';
 // consulta
 try {
     $_GET['cli_nombre'] = htmlspecialchars($_GET['cli_nombre']);
-    $_GET['cli_apellido'] = filter_var($_GET['cli_apellido']);
+    $_GET['cli_apellido'] = htmlspecialchars($_GET['cli_apellido']);
     $_GET['cli_nit'] = filter_var($_GET['cli_nit'], FILTER_VALIDATE_INT);
 
     $Cli_Consulta = new Cliente($_GET);
@@ -40,6 +40,7 @@ include_once '../../vistas/templates/header.php'; ?>
         <a href="../../vistas/clientes/buscar.php" class="btn btn-primary w-100">Regresar</a>
     </div>
 </div>
+
 <!-- Se imprime los resultados -->
 <h1 class="text-center">Clientes Ingresados </h1>
     <div class="row justify-content-center">
@@ -54,13 +55,13 @@ include_once '../../vistas/templates/header.php'; ?>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php if($resultado['codigo'] == 1 && count($cliente) > 0) : ?>
-                        <?php foreach ($cliente as $key => $producto) : ?>
+                    <?php if($resultado['codigo'] == 1 ) : ?>
+                        <?php foreach ($cliente as $key => $clientes) : ?>
                             <tr>
                                 <td><?= $key + 1?></td>
-                                <td><?= $cliente['cli_nombre'] ?></td>
-                                <td><?= $cliente['cli_apellido'] ?></td>
-                                <td><?= $cliente['cli_nit'] ?></td>
+                                <td><?= $clientes['cli_nombre'] ?></td>
+                                <td><?= $clientes['cli_apellido'] ?></td>
+                                <td><?= $clientes['cli_nit'] ?></td>
                                 <td class="text-center">
                                 <div class="dropdown">
                                     <button class="btn btn-info dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
