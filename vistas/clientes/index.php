@@ -34,7 +34,7 @@
         </div>
         <div class="row">
             <div class="col">
-                <a href="../../controladores//clientes/buscar.php" class="btn btn-success w-100">Buscar</a>
+                <a href="buscar.php" class="btn btn-success w-100">Buscar</a>
             </div>
         </div>
     </form>
