@@ -11,11 +11,11 @@ class  Cliente extends Conexion {
 
     public function __construct($args = [])
     {
-        $this->cli_codigo = $args['cli_id'] ?? null ;
+        $this->cli_codigo = $args['cli_codigo'] ?? null ;
         $this->cli_nombre = $args['cli_nombre'] ?? '' ;
         $this->cli_apellido = $args['cli_apellido'] ?? '' ;
-        $this->cli_nit = $args ['cli_nit'] ?? 00;
-        $this->cli_telefono = $args ['cli_telefono'] ?? 00;
+        $this->cli_nit = $args ['cli_nit'] ?? 00 ;
+        $this->cli_telefono = $args ['cli_telefono'] ?? 00 ;
         $this->cli_situacion = $args['cli_situacion'] ?? 1 ;
     }
     // insertar datos a la BD
