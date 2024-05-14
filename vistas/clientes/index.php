@@ -23,6 +23,12 @@
         </div>
         <div class="row mb-3">
             <div class="col">
+                <label for="cli_telefono">Telefono</label>
+                <input type="number" name="cli_telefono" id="cli_telefono" min="0" step="0.01" class="form-control" required>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col">
                 <button type="submit" class="btn btn-info w-100">Guardar</button>
             </div>
         </div>
