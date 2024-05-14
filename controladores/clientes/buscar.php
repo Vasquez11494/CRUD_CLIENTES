@@ -1,6 +1,10 @@
 <?php
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
 
-require './modelos/cliente.php';
+
+require '../../modelos/cliente.php';
 
 // consulta
 try {
@@ -9,10 +13,10 @@ try {
     $_GET['cli_nit'] = filter_var($_GET['cli_nit'], FILTER_VALIDATE_INT);
 
     $Cli_Consulta = new Cliente($_GET);
-    $clienteConsulta = $Cli_Consulta->buscar();
+    $cliente = $Cli_Consulta->buscar();
     $resultado = [
         'mensaje' => 'Datos encontrados',
-        'datos' => $clienteConsulta,
+        'datos' => $cliente,
         'codigo' => 1
     ];
 } catch (Exception $e) {
@@ -33,7 +37,7 @@ include_once '../../vistas/templates/header.php'; ?>
 </div>
 <div class="row justify-content-center">
     <div class="col-lg-6">
-        <a href="../../vistas/clientes/index.php" class="btn btn-primary w-100">Regresar</a>
+        <a href="../../vistas/clientes/buscar.php" class="btn btn-primary w-100">Regresar</a>
     </div>
 </div>
 <!-- Se imprime los resultados -->
@@ -50,13 +54,13 @@ include_once '../../vistas/templates/header.php'; ?>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php if($resultado['codigo'] == 1 && count($clienteConsulta) > 0) : ?>
-                        <?php foreach ($clienteConsulta as $key => $producto) : ?>
+                    <?php if($resultado['codigo'] == 1 && count($cliente) > 0) : ?>
+                        <?php foreach ($cliente as $key => $producto) : ?>
                             <tr>
                                 <td><?= $key + 1?></td>
-                                <td><?= $clienteConsulta['cli_nombre'] ?></td>
-                                <td><?= $clienteConsulta['cli_apellido'] ?></td>
-                                <td><?= $clienteConsulta['cli_nit'] ?></td>
+                                <td><?= $cliente['cli_nombre'] ?></td>
+                                <td><?= $cliente['cli_apellido'] ?></td>
+                                <td><?= $cliente['cli_nit'] ?></td>
                                 <td class="text-center">
                                 <div class="dropdown">
                                     <button class="btn btn-info dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
