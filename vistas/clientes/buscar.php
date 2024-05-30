@@ -17,12 +17,6 @@
         </div>
         <div class="row mb-3">
             <div class="col">
-                <label for="cli_nit">No. de NIT</label>
-                <input type="number" name="cli_nit" id="cli_nit" class="form-control">
-            </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col">
                 <button type="submit" class="btn btn-info w-100"><i class="bi bi-search me-2"></i>Buscar</button>
             </div>
         </div>
