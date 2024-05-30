@@ -41,4 +41,13 @@ class  Cliente extends Conexion {
         $resultado = self::servir($sql);
         return $resultado;
     }
+
+    public function buscarID($ID){
+        
+        $sql = "SELECT * FROM cliente_crud where cli_situacion = 1 AND cli_codigo = $ID ";
+
+        $resultado =  self::servir($sql);
+        return $resultado;
+    }
+
 }
