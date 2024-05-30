@@ -11,7 +11,7 @@ try {
     $_GET['cli_nombre'] = htmlspecialchars($_GET['cli_nombre']);
     $_GET['cli_apellido'] = htmlspecialchars($_GET['cli_apellido']);
     $_GET['cli_nit'] = filter_var($_GET['cli_nit'], FILTER_VALIDATE_INT);
-    $_GET['cli_telefono'] = filter_var($_GET['cli_telefono'], FILTER_VALIDATE_INT);
+    // $_GET['cli_telefono'] = filter_var($_GET['cli_telefono'], FILTER_VALIDATE_INT);
 
     $Cli_Consulta = new Cliente($_GET);
     $cliente = $Cli_Consulta->buscar();

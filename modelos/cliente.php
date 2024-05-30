@@ -20,14 +20,14 @@ class  Cliente extends Conexion {
     }
     // insertar datos a la BD
     public function guardar(){
-        $sql = "INSERT into cliente (cli_nombre, cli_apellido, cli_nit, cli_telefono) values ('$this->cli_nombre','$this->cli_apellido','$this->cli_nit','$this->cli_telefono')";
+        $sql = "INSERT into cliente_crud (cli_nombre, cli_apellido, cli_nit, cli_telefono) values ('$this->cli_nombre','$this->cli_apellido','$this->cli_nit','$this->cli_telefono')";
         $resultado = $this->ejecutar($sql);
         return $resultado; 
     }
 
     public function buscar(...$columnas){
         $cols = count($columnas) > 0 ? implode(',', $columnas) : '*';
-        $sql = "SELECT $cols FROM cliente where cli_codigo > 0 ";
+        $sql = "SELECT $cols FROM cliente_crud where cli_situacion =  1 ";
 
         if($this->cli_nombre != ''){
             $sql .= " AND cli_nombre like '%$this->cli_nombre%' ";
