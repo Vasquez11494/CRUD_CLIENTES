@@ -50,4 +50,10 @@ class  Cliente extends Conexion {
         return $resultado;
     }
 
+    public function modificar(){
+        $sql = "UPDATE cliente_crud SET cli_nombre = '$this->cli_nombre', cli_apellido = '$this->cli_apellido', cli_nit = '$this->cli_nit', cli_telefono = '$this->cli_telefono' WHERE cli_situacion = 1 AND cli_codigo = $this->cli_codigo ";
+        $resultado = $this->ejecutar($sql);
+        return $resultado; 
+    }
+
 }

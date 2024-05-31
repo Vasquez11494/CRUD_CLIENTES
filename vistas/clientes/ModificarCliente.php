@@ -13,7 +13,7 @@ $ClienteModificar = $modificar->buscarID($_GET['cli_codigo']);
     <form action="../../controladores/clientes/modificiar.php" method="POST" class="border bg-light shadow rounded p-4 col-lg-6">
             <div class="row mb-3">
             <div class="col">
-                <input type="text" name="cli_codigo" id="cli_codigo" class="form-control" value="<?= $ClienteModificar['cli_codigo'] ?>">
+                <input type="hidden" name="cli_codigo" id="cli_codigo" class="form-control" value="<?= $ClienteModificar['cli_codigo'] ?>">
             </div>
         </div>    
     <div class="row mb-3">
