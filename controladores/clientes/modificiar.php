@@ -22,7 +22,7 @@ if ($_POST['cli_nombre'] == '' || $_POST['cli_apellido' == ''] || $_POST['cli_ni
         $modficar = $clienteNuevo->modificar();
 
         $resultado = [
-            'mensaje' => 'PRODUCTO MODIFICADO CORRECTAMENTE',
+            'mensaje' => 'CLIENTE MODIFICADO CORRECTAMENTE',
             'codigo' => 1
         ];
 
@@ -34,10 +34,28 @@ if ($_POST['cli_nombre'] == '' || $_POST['cli_apellido' == ''] || $_POST['cli_ni
         ];
     } catch (Exception $e) {
         $resultado = [
-            'mensaje' => 'OCURRIO UN ERROR EN LA EJECUCIÓN',
+            'mensaje' => 'OCURRIO ERROR EN LA EJECUCION',
             'detalle' => $e->getMessage(),
             'codigo' => 0
         ];
     }
 
 }
+
+$alertas = ['danger', 'success', 'warning'];
+  
+include_once '../../vistas/templates/header.php'; ?>
+
+<div class="row justify-content-center">
+    <div class="col-lg-6 alert alert-<?=$alertas[$resultado['codigo']] ?>" role="alert">
+        <?= $resultado['mensaje'] ?>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-lg-6">
+        <a href="../../vistas/clientes/buscar.php" class="btn btn-primary w-100">Regresar</a>
+    </div>
+</div>
+
+
+<?php include_once '../../vistas/templates/footer.php'; ?>  
