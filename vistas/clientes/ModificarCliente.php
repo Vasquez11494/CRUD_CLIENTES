@@ -1,4 +1,5 @@
 <?php
+
 require "../../modelos/cliente.php";
 include_once '../templates/header.php';
 $_GET['cli_codigo'] = filter_var( base64_decode($_GET['cli_codigo']), FILTER_SANITIZE_NUMBER_INT);

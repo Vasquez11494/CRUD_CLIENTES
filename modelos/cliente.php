@@ -56,4 +56,9 @@ class  Cliente extends Conexion {
         return $resultado; 
     }
 
+    public function eliminar(){
+        $sql = "UPDATE cliente_crud SET cli_situacion = 0  WHERE cli_codigo = $this->cli_codigo";
+        $resultado = $this->ejecutar($sql);
+        return $resultado; 
+    }
 }
