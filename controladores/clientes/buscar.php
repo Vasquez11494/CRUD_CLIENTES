@@ -70,7 +70,7 @@ include_once '../../vistas/templates/header.php'; ?>
                                     </button>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="../../vistas/clientes/ModificarCliente.php?cli_codigo=<?= base64_encode($opcion['cli_codigo'])?>"><i class="bi bi-pencil-square me-2"></i>Modificar</a></li>
-                                        <li><a class="dropdown-item" href="#"><i class="bi bi-trash me-2"></i>Eliminar</a></li>
+                                        <li><a class="dropdown-item" href="../../vistas/clientes/eliminar.php?cli_codigo=<?= base64_encode($opcion['cli_codigo'])?>"><i class="bi bi-trash me-2"></i>Eliminar</a></li>
                                     </ul>
                                 </div>
                                 </td>
