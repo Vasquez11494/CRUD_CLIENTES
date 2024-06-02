@@ -9,18 +9,16 @@ $Eliminar = new Cliente($_GET);
 
 try {
 
-    $clienteEliminar = $Eliminar->elimnar();
-
-    $modficar = $clienteNuevo->modificar();
+    $clienteEliminar = $Eliminar->eliminar();
 
     $resultado = [
-        'mensaje' => 'CLIENTE MODIFICADO CORRECTAMENTE',
+        'mensaje' => 'CLIENTE ELIMINADO EXITOSAMENTE',
         'codigo' => 1
     ];
 
 } catch (PDOException $pe) {
     $resultado = [
-        'mensaje' => 'OCURRIO UN ERROR MODIFICANDO EL REGISTRO A LA BD',
+        'mensaje' => 'OCURRIO UN ERROR AL ELIMINAR EL CLIENTE DE LA BD',
         'detalle' => $pe->getMessage(),
         'codigo' => 0
     ];
@@ -31,4 +29,22 @@ try {
         'codigo' => 0
     ];
 }
+
+$alertas = ['danger', 'success', 'warning'];
+  
+include_once '../../vistas/templates/header.php'; ?>
+
+<div class="row justify-content-center">
+    <div class="col-lg-6 alert alert-<?=$alertas[$resultado['codigo']] ?>" role="alert">
+        <?= $resultado['mensaje'] ?>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-lg-6">
+        <a href="../../vistas/clientes/buscar.php" class="btn btn-primary w-100">Regresar</a>
+    </div>
+</div>
+
+
+<?php include_once '../../vistas/templates/footer.php'; ?>  
 
